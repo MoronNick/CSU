@@ -1,0 +1,20 @@
+Node Type,Node,Node Interface,Peer Type,Peer Node,Peer Interface,Node Interface Enabled
+l2leaf,camsw1,Ethernet1,server,UNIX_R5C7U1-2_CAMSYSPIVOT1,iDRAC,True
+l2leaf,camsw1,Ethernet2,server,UNIX_R5C7U1-2_CAMSYSPIVOT1,Eth0/1,True
+l2leaf,camsw1,Ethernet3,server,UNIX_R5C7U1-2_CAMSYSPIVOT1,Eth4/1,True
+l2leaf,camsw1,Ethernet5,server,UNIX_R5C7U1-2_CAMSYSPIVOT2,iDRAC,True
+l2leaf,camsw1,Ethernet6,server,UNIX_R5C7U1-2_CAMSYSPIVOT2,Eth0/2,True
+l2leaf,camsw1,Ethernet7,server,UNIX_R5C7U1-2_CAMSYSPIVOT2,Eth0/2,True
+l2leaf,camsw1,Ethernet15,network_port,,,True
+l2leaf,camsw1,Ethernet47,mlag_peer,camsw2,Ethernet47,True
+l2leaf,camsw1,Ethernet48,mlag_peer,camsw2,Ethernet48,True
+l2leaf,camsw2,Ethernet1,server,UNIX_R5C7U1-2_CAMSYSPIVOT1,Eth0/3,True
+l2leaf,camsw2,Ethernet2,server,UNIX_R5C7U1-2_CAMSYSPIVOT1,Eth0/2,True
+l2leaf,camsw2,Ethernet3,server,UNIX_R5C7U1-2_CAMSYSPIVOT1,Eth4/0,True
+l2leaf,camsw2,Ethernet4,server,UNIX_R5C7U1-2_CAMSYSPIVOT1,Eth0/4,True
+l2leaf,camsw2,Ethernet5,server,UNIX_R5C7U1-2_CAMSYSPIVOT2,Eth0/3,True
+l2leaf,camsw2,Ethernet6,server,UNIX_R5C7U1-2_CAMSYSPIVOT2,Eth0/1,True
+l2leaf,camsw2,Ethernet7,server,UNIX_R5C7U1-2_CAMSYSPIVOT2,Eth4/0,True
+l2leaf,camsw2,Ethernet8,server,UNIX_R5C7U1-2_CAMSYSPIVOT2,Eth0/4,True
+l2leaf,camsw2,Ethernet47,mlag_peer,camsw1,Ethernet47,True
+l2leaf,camsw2,Ethernet48,mlag_peer,camsw1,Ethernet48,True

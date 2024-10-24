@@ -1,0 +1,97 @@
+tenants:
+  - name: main
+    l2vlans:
+      - id: 11
+        name: ACNS_Mgmt
+      - id: 103
+        name: ACNS_Services_103
+      - id: 408
+        name: Cardkey_DataCenter
+      - id: 553
+        name: Windows_Unix_MGMT
+      - id: 592
+        name: Security_Cameras
+      - id: 918
+        name: Cluster_comm_10.2.103
+      - id: 920
+        name: VM_Mgmt
+      - id: 922
+        name: Vmotion
+      - id: 1000
+        name: san_0
+      - id: 1001
+        name: san_1
+
+# Uplink ports
+network_ports:
+  - switches:
+    - camsw1
+    switch_ports: [ Ethernet15 ]
+    mode: 'trunk'
+    port_channel:
+      mode: active
+      channel_id: 645
+
+
+servers:
+  - name: UNIX_R5C7U1-2_CAMSYSPIVOT1
+    adapters:
+      - endpoint_ports: [iDRAC, Eth0/3]
+        switch_ports: [ Ethernet1, Ethernet1 ]
+        switches: [ camsw1, camsw2 ]
+        spanning_tree_bpduguard: enabled
+        vlans: 553
+        mode: access
+        spanning_tree_portfast: edge
+      - endpoint_ports: [Eth0/1, Eth0/2]
+        switch_ports: [ Ethernet2, Ethernet2 ]
+        switches: [ camsw1, camsw2 ]
+        vlans: 1001
+        mode: access
+        spanning_tree_portfast: edge
+      - endpoint_ports: [Eth4/1, Eth4/0]
+        switch_ports: [ Ethernet3, Ethernet3 ]
+        switches: [ camsw1, camsw2 ]
+        vlans: 592
+        mode: access
+        spanning_tree_portfast: edge
+ #only attached to one switch       
+      - endpoint_ports: [ Eth0/4 ]
+        switch_ports: [ Ethernet4 ]
+        switches: [ camsw2 ]
+        vlans: 922
+        mode: access
+        spanning_tree_portfast: edge
+
+  - name: UNIX_R5C7U1-2_CAMSYSPIVOT2
+    adapters:
+      - endpoint_ports: [iDRAC, Eth0/3]
+        switch_ports: [ Ethernet5, Ethernet5 ]
+        switches: [ camsw1, camsw2 ]
+        vlans: 553
+        mode: access
+        spanning_tree_portfast: edge
+
+      - endpoint_ports: [Eth0/2, Eth0/1]
+        switch_ports: [ Ethernet6, Ethernet6 ]
+        switches: [ camsw1, camsw2 ]
+        vlans: 1001
+        mode: access
+        spanning_tree_portfast: edge
+
+      - endpoint_ports: [Eth0/2, Eth4/0]
+        switch_ports: [ Ethernet7, Ethernet7 ]
+        switches: [ camsw1, camsw2 ]
+        vlans: 592
+        mode: access
+        spanning_tree_portfast: edge
+
+ #only attached to one switch       
+      - endpoint_ports: [ Eth0/4 ]
+        switch_ports: [ Ethernet8 ]
+        switches: [ camsw2 ]
+        vlans: 922
+        mode: access
+        spanning_tree_portfast: edge
+
+

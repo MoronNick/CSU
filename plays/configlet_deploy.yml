@@ -1,0 +1,10 @@
+tasks:
+  - name: Upload cvp configlets
+    ansible.builtin.import_role:
+        name: arista.avd.cvp_configlet_upload
+    vars:
+      configlet_directory: 'inventory/intended/configs/'
+      file_extension: 'txt'
+      configlets_cvp_prefix: 'AVD'
+      execute_tasks: false
+      cv_collection: v3

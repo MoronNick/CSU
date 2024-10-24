@@ -1,0 +1,19 @@
+l2leaf:
+  defaults:
+    mlag_peer_ipv4_pool: 192.168.0.0/24
+    mlag_interfaces: [Ethernet47, Ethernet48]
+    spanning_tree_mode: mstp
+    spanning_tree_priority: 16384
+
+  node_groups:
+    - group: MLAG
+      mlag: true
+      filter:
+      nodes:
+        - name: camsw1
+          id: 30
+          mgmt_ip: 172.16.100.105/24
+        - name: camsw2
+          id: 31
+          mgmt_ip: 172.16.100.106/24
+

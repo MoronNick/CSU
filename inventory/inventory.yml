@@ -1,0 +1,56 @@
+---
+all:
+  children:
+    CVAAS:
+      hosts:
+        cvaas:
+    CSU:
+      children:
+        FABRIC:
+          children:
+            DC1:
+              children:
+                DC1_SPINES:
+                  hosts:
+                    spine1-dc1: 
+                      is_deployed: false
+                    spine2-dc1: 
+                      is_deployed: false
+                DC1_LEAVES:
+                  hosts:
+                    leaf1a-dc1: 
+                      is_deployed: false
+                    leaf1b-dc1: 
+                      is_deployed: false
+                    leaf2a-dc1: 
+                      is_deployed: false
+                    leaf2b-dc1:   
+                      is_deployed: false            
+                    leaf3a-dc1: 
+                      is_deployed: false
+                    leaf3b-dc1: 
+                      is_deployed: false
+        STANDALONE:
+          children:        
+            L2_LEAVES:
+              children:
+                CAMERA:
+                  hosts:
+                    camsw1:
+                      is_deployed: false     
+                    camsw2:
+                      is_deployed: false  
+    DC1_NETWORK_SERVICES:
+      children:
+        DC1_LEAVES:
+        DC2_LEAVES:  
+    STANDALONE_Network_SERVICES:
+      children:
+        L2_LEAVES:              
+    DC1_CONNECTED_ENDPOINTS:
+      children:
+        DC1_LEAVES:
+        DC2_LEAVES:
+    STANDALONE_CONNECTED_ENDPOINTS: 
+      children:
+        CAMERA:       

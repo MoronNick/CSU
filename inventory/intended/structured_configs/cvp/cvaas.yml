@@ -1,0 +1,12 @@
+---
+cvp_devices:
+  []
+cvp_containers:
+  DC1:
+    parentContainerName: FABRIC
+  DC1_LEAVES:
+    parentContainerName: DC1
+  DC1_SPINES:
+    parentContainerName: DC1
+  FABRIC:
+    parentContainerName: Tenant
